@@ -6,7 +6,12 @@ import { Icon } from "leaflet";
 //import * as narrativeData from "./data/narratives.json";
 import Map from './components/map/Map';
 import "./App.css";
-
+// ADDED
+import Disclaimer from './components/Disclaimer';
+import {useState, useEffect} from 'react';
+import twitterlogo from './twitterlogo.png';
+import facebooklogo from './facebook.png';
+import linklogo from './linklogo.png';
 export default function App() {
   return (
     <Map />
