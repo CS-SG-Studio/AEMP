@@ -51,7 +51,18 @@ class Map extends React.Component {
           narrative.geometry.coordinates[0],
       ]}
       radius={5}
-        />
+        >
+        <Popup>
+          {narrative.properties.name} <br /> {narrative.properties.descriptio} <br />
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href=narrative.properties.link;
+            }}
+          > Listen on SoundCloud </button>
+        </Popup>
+      </Marker>
       ))}
     </MarkerClusterGroup>;
 
@@ -65,70 +76,3 @@ export default Map;
 
 
 
-
-
-
-/*
-    <MapContainer center={[37.7749, -122.4194]} zoom={12}>
-
-    <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      />
-
-    <MarkerClusterGroup spiderfyDistanceMultiplier={1}
-            showCoverageOnHover={true}>
-      {narrativeData.features.map(narrative => (
-        <CircleMarker 
-          key={narrative.properties.address}
-          center={[
-            narrative.geometry.coordinates[1],
-            narrative.geometry.coordinates[0],
-        ]}
-        position={[
-          narrative.geometry.coordinates[1],
-          narrative.geometry.coordinates[0],
-      ]}
-      radius={5}
-        />
-      ))}
-    </MarkerClusterGroup>;
-
-  </MapContainer>
-
-
-}
-
-
-
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
-  
-  render() {
-      return (
-          <div>
-              <div className="header-cookie-container">
-                  <img src={cookieImage}/>
-                  <img src={cookieImage}/>
-                  <img src={cookieImage}/>
-                  <img src={cookieImage}/>
-                  <img src={cookieImage}/>
-                  <img src={cookieImage}/>
-                  <img src={cookieImage}/>
-                  <img src={cookieImage}/>
-              </div>
-
-              <div className="header-text">
-                  Leena Bahrami&apos;s Cookie Header
-              </div>
-          </div>
-        );
-    }
-
-}
-
-export default Header;
-*/
